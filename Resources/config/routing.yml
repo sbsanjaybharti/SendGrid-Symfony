@@ -1,0 +1,3 @@
+send_grid_homepage:
+    path:     /
+    defaults: { _controller: SendGridBundle:Default:index }
