@@ -1,5 +1,5 @@
 <?php
-
+namespace CRS\SendgridBundle\Model;
 /**
  * Created by CRS-SANJAY-BHARTI.
  * User: sbsanjaybharti
