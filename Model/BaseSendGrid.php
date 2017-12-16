@@ -77,7 +77,7 @@ class BaseSendGrid
      */
     public function setFrom($value)
     {
-        $this->to = $value;
+        $this->from = $value;
 
         return $this;
     }

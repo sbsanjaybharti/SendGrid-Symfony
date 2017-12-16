@@ -21,6 +21,8 @@ class SendGridExtension extends Extension
     {
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
+        $container->setParameter( 'send_grid.key', $config[ 'key' ] );
+        $container->setParameter( 'send_grid.status', $config[ 'status' ] );
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
