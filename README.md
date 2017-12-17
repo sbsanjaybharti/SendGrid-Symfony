@@ -17,13 +17,13 @@ Add CRS/SendGridBundle to your `composer.json` file.
 ```json
 {
   "require": {
-    "sendgrid-symfony": "~1.0"
+    "crs/sendgrid-symfony": "~1.0"
   }
 }
 ```
 #### Alternative: Install package from cmd
 ```
-	composer require sendgrid-symfony
+	composer require crs/sendgrid-symfony
 ```
 ### Quick Start:
 <a name="quick-start"></a>
