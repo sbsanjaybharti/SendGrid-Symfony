@@ -24,7 +24,7 @@ class crs_mail extends BaseSendGrid
 
     }
 
-    public function sendByTemplateId($type = 'text/html'){
+    public function sendMail($type = 'text/html'){
 
         $from = new Email(null, $this->getFrom());
 
@@ -32,7 +32,7 @@ class crs_mail extends BaseSendGrid
         $content = new Content($type, $this->getBody());
         $mail = new Mail($from, $this->getSubject(), $to, $content);
         foreach ($this->getSubsitute() as $key => $substitute){
-            $mail->personalization[0]->addSubstitution('%'.$key.'%', $substitute);
+            $mail->personalization[0]->addSubstitution('<%'.$key.'%>', $substitute);
         }
         if($this->getAttachment())
             foreach ($this->getAttachment() as $attachment){
