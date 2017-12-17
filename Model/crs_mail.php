@@ -1,5 +1,6 @@
 <?php
 namespace CRS\SendgridBundle\Model;
+use SendGrid\Attachment;
 use SendGrid\Content;
 use SendGrid\Email;
 use SendGrid\Mail;
@@ -33,6 +34,11 @@ class crs_mail extends BaseSendGrid
         foreach ($this->getSubsitute() as $key => $substitute){
             $mail->personalization[0]->addSubstitution('%'.$key.'%', $substitute);
         }
+        if($this->getAttachment())
+            foreach ($this->getAttachment() as $attachment){
+                $mail->addAttachment($attachment);
+            }
+
         $mail->setTemplateId($this->getTemplate());
         if($this->status == True)
             $apiKey = getenv($this->key);

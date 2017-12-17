@@ -1,5 +1,8 @@
 <?php
 namespace CRS\SendgridBundle\Model;
+
+use SendGrid\Attachment;
+
 /**
  * Created by CRS-SANJAY-BHARTI.
  * User: sbsanjaybharti
@@ -33,6 +36,10 @@ class BaseSendGrid
      * @var array
      */
     private $subsitute;
+    /**
+     * @var array
+     */
+    private $attachments;
 
     /**
      * Get string
@@ -161,16 +168,40 @@ class BaseSendGrid
     }
 
     /**
-     * Set to
+     * Set subsitute
      *
-     * @param string $to
+     * @param string $subsitute
      *
-     * @return string
+     * @return array
      */
     public function setSubsitute($value)
     {
         $this->subsitute = $value;
 
         return $this;
+    }
+    /**
+     * Set attachement
+     *
+     * @param array $files
+     *
+     * @return array
+     */
+    public function addAttachment($files){
+        foreach ($files as $file):
+            $file_info = pathinfo($file);
+            $attachment = new Attachment();
+            $attachment->setContent(base64_encode(file_get_contents($file)));
+            $attachment->setType("application/".$file_info['extension']);
+            $attachment->setFilename($file_info['basename']);
+            $attachment->setDisposition("attachment");
+            $attachment->setContentId($file_info['filename']);
+            $attachments[] = $attachment;
+        endforeach;
+        $this->attachments = $attachments;
+        return $this->attachments;
+    }
+    public function getAttachment(){
+        return $this->attachments;
     }
 }
