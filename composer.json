@@ -1,0 +1,30 @@
+{
+    "name": "CRS/SendgridBundle",
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "Sanjay",
+        "email": "info@sanjaybharti.com"
+      }
+    ],
+    "type": "symfony-bundle",
+    "description": "Bundle used to send mail by Sendgrid",
+    "autoload": {
+        "psr-4": { "CRS\\SendgridBundle\\": "" }
+    },
+    "autoload-dev": {
+        "psr-4": { "Tests\\": "tests/" }
+    },
+    "require": {
+        "php": ">=5.5.9",
+        "sendgrid/sendgrid": "~5.1"
+    },
+    "require-dev": {
+        "symfony/phpunit-bridge": "^3.0"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "dev-master"
+        }
+    }
+}
