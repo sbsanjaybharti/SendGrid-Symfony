@@ -1,5 +1,5 @@
 {
-    "name": "sendgrid-symfony",
+    "name": "crs/sendgrid-symfony",
     "license": "MIT",
     "authors": [
       {
