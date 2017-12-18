@@ -21,6 +21,17 @@ Add CRS/SendGridBundle to your `composer.json` file.
   }
 }
 ```
+Add path in appKernel.php in bundle variable.
+```
+
+        $bundles = [
+            ....
+            ....
+            ....
+            new CRS\SendgridBundle\SendGridBundle(),
+        ];
+```
+
 #### Alternative: Install package from cmd
 ```
 	composer require crs/sendgrid-symfony
