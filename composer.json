@@ -16,7 +16,8 @@
         "psr-4": { "Tests\\": "tests/" }
     },
     "require": {
-        "php": ">=5.5.9"
+        "php": ">=5.5.9",
+        "sendgrid/sendgrid": "^5.0"
     },
     "require-dev": {
         "symfony/phpunit-bridge": "^3.0"
